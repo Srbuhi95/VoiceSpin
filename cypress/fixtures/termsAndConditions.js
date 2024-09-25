@@ -4,11 +4,11 @@ const username = '#username';
 const password = '#password';
 const login = '#kc-login'
 const proceed = '.primary-btn';
-const termsAndConditions = 'li:nth-of-type(1) > [_ngcontent-jci-c37]';
+const termsAndConditions = '//a[contains(.,\'Terms and Conditions  To confirm reading of the document - scroll through the wh\')]';
 const termsBody = '[data-page-number=\'1\'] > .textLayer';
-const agreeButton = '.float-right[_ngcontent-jci-c12] > .mat-mdc-button-touch-target';
-const suggestions = 'li:nth-of-type(2) > [_ngcontent-jci-c37]';
-const checkbox = '.mdc-checkbox';
+const agreeButton = '//button[@class=\'float-right next mdc-button mat-mdc-button mat-unthemed mat-mdc-button-base\']';
+const suggestions = '//a[.=\'suggestions\']';
+const checkbox = '//div[@class=\'mdc-checkbox\']';
 const next = '.mat-stepper-next[disabled=\'true\']';
 const usernameC = '799470085392240';
 const passwordC = 'Test_123';
