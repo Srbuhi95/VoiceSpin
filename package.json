@@ -1,0 +1,15 @@
+{
+  "name": "voicespin-test",
+  "version": "1.0.0",
+  "description": "This repository contains automation tests for verifying the first three steps in the Agreement Signing process using JavaScript with Cypress.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^13.14.2"
+  }
+}
