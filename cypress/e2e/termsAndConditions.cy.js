@@ -9,8 +9,8 @@ describe('Agreement Signing Process', () => {
         cy.visit('https://stage-portal-app153-v2.voicespin.info/#/login', { timeout: 20000 });
     });
 
+
     it('should log in with valid credentials', () => {
-        cy.session('performLoginSequence2', () => {
             inputCustomerID();
             inputOnlinerToken();
             clickProceed();
@@ -18,21 +18,18 @@ describe('Agreement Signing Process', () => {
             inputusername();
             inputPassword();
             ClickLogin();
-            cy.wait(10000);
-            clicktermsAndConditions();
-            scrollBottom();
-            clickAgreeButton();
-            clickSuggestions();
-            checkboxAndNext();
+            cy.wait(20000)
         });
 
+
+    it('should open Terms and Conditions link and enable Agree button', () => {
+        clicktermsAndConditions();
+        scrollBottom();
+        clickAgreeButton();
+        clickSuggestions();
     });
 
-//     it('should open Terms and Conditions link and enable Agree button', () => {
-//
-//     });
-//
-//     it('should enable Next button after opening both documents', () => {
-//
-//     });
+    it('should enable Next button after opening both documents', () => {
+        checkboxAndNext();
+    });
 });

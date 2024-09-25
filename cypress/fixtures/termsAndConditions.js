@@ -4,11 +4,11 @@ const username = '#username';
 const password = '#password';
 const login = '#kc-login'
 const proceed = '.primary-btn';
-const termsAndConditions = '//a[contains(.,\'Terms and Conditions  To confirm reading of the document - scroll through the wh\')]';
-const termsBody = '[data-page-number=\'1\'] > .textLayer';
+const termsAndConditions = ':nth-child(1) > a';
+const termsBody = '//div[@class=\'pdfViewer\']/div[@class=\'page\']/div[contains(.,\'THESE TERMS AND CONDITIONS (the “Agreement”) are entered into as of the date tha\')]';
 const agreeButton = '//button[@class=\'float-right next mdc-button mat-mdc-button mat-unthemed mat-mdc-button-base\']';
 const suggestions = '//a[.=\'suggestions\']';
-const checkbox = '//div[@class=\'mdc-checkbox\']';
+const checkbox = '.mat-mdc-checkbox';
 const next = '.mat-stepper-next[disabled=\'true\']';
 const usernameC = '799470085392240';
 const passwordC = 'Test_123';
@@ -45,14 +45,9 @@ export function ClickLogin() {
     cy.get(login).click();
 }
 
-// Validate successful login by checking the presence of the Portal section
-export function urlValidation(){
-cy.url().should('include', '/portal');
-}
-
 // // Click on the Terms and Conditions link
 export function clicktermsAndConditions () {
-    cy.get(termsAndConditions).click();
+    cy.get(termsAndConditions).click().wait(10000);
 }
 
 // Scroll to the bottom of the Terms and Conditions document
@@ -68,6 +63,6 @@ export function clickSuggestions() {
 }
 
 export function checkboxAndNext() {
-    cy.get(checkbox).check();
+    cy.get(checkbox).click();
     cy.get(next).should('be.enabled');
 }
