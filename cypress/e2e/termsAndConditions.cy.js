@@ -7,7 +7,6 @@ import {
 describe('Agreement Signing Process', () => {
     before(() => {
         cy.visit('https://stage-portal-app153-v2.voicespin.info/v2/agreement', { timeout: 10000 });
-        cy.wait(2000);
     });
 
     it('should log in with valid credentials', () => {
