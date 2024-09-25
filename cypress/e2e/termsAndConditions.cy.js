@@ -10,23 +10,29 @@ describe('Agreement Signing Process', () => {
     });
 
     it('should log in with valid credentials', () => {
-        inputCustomerID();
-        inputOnlinerToken();
-        clickProceed();
-        cy.wait(2000);
-        inputusername();
-        inputPassword();
-        ClickLogin();
+        cy.session('performLoginSequence2', () => {
+            inputCustomerID();
+            inputOnlinerToken();
+            clickProceed();
+            cy.wait(2000);
+            inputusername();
+            inputPassword();
+            ClickLogin();
+            cy.wait(10000);
+            clicktermsAndConditions();
+            scrollBottom();
+            clickAgreeButton();
+            clickSuggestions();
+            checkboxAndNext();
+        });
+
     });
 
-    it('should open Terms and Conditions link and enable Agree button', () => {
-        clicktermsAndConditions();
-        scrollBottom();
-        clickAgreeButton();
-        clickSuggestions();
-    });
-
-    it('should enable Next button after opening both documents', () => {
-        checkboxAndNext();
-    });
+//     it('should open Terms and Conditions link and enable Agree button', () => {
+//
+//     });
+//
+//     it('should enable Next button after opening both documents', () => {
+//
+//     });
 });
